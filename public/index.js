@@ -11,7 +11,7 @@ var app = angular.module('myApp',[]);
 	 $scope.foo_getAllimages = function(){
 	 $http({
 		method : "GET",
-		url : "http://localhost:9090/get_allimg/"+$scope.all_data,
+		url : "http://ec2-34-209-125-251.us-west-2.compute.amazonaws.com:9090/get_allimg/"+$scope.all_data,
 	
 	}).then(function mySuccess(response) {
     		$scope.allImage_data = response.data;
@@ -39,7 +39,7 @@ var app = angular.module('myApp',[]);
 		
 	 $http({
 		method : "GET",
-		url : "http://localhost:9090/asd",
+		url : "http://ec2-34-209-125-251.us-west-2.compute.amazonaws.com:9090/asd",
 	
 	}).then(function mySuccess(response) {
     		
@@ -53,7 +53,7 @@ var app = angular.module('myApp',[]);
 	 $http({
 		
 		method : "GET",
-		url : "http://localhost:9090/get_img/"+$scope.dropdown_level,
+		url : "http://ec2-34-209-125-251.us-west-2.compute.amazonaws.com:9090/get_img/"+$scope.dropdown_level,
 	
 	}).then(function mySuccess(response) {
     		
@@ -83,7 +83,7 @@ var app = angular.module('myApp',[]);
 				console.log($scope.flag);
 			 }
 			 
-			$scope.act_link = "http://localhost:9090/asd/"+$scope.dropdown_level;
+			$scope.act_link = "http://ec2-34-209-125-251.us-west-2.compute.amazonaws.com:9090/asd/"+$scope.dropdown_level;
 			console.log($scope.act_link);
 	});
 	}		
