@@ -58,21 +58,21 @@ var app = angular.module('myApp',[]);
 	}).then(function mySuccess(response) {
     		
 			$scope.URL_link = response.data;
-			// console.log($scope.URL_link[0].link_1);
-			if($scope.URL_link[0].link_1 != "")
+			 console.log($scope.URL_link[0]);
+			if($scope.URL_link[0].link_1 != "" || ($scope.URL_link[0].link_2 != "undefined"))
 			{
 				$scope.flag = true;
 				$scope.imgURL_1 = $scope.URL_link[0].link_1;
 				console.log($scope.imgURL_1);
 			}
 			 
-			 if($scope.URL_link[0].link_2 != "")
+			 if(($scope.URL_link[0].link_2 != "") || ($scope.URL_link[0].link_2 != "undefined"))
 			 {
 			 $scope.flag = true;
 				$scope.imgURL_2 = $scope.URL_link[0].link_2;
 				console.log($scope.imgURL_2);
 			 }
-			 if($scope.URL_link[0].link_1 == "" && $scope.URL_link[0].link_2 == "")
+			 if(($scope.URL_link[0].link_1 == "" && $scope.URL_link[0].link_2 == "") || ($scope.URL_link[0].link_2 != "undefined" && $scope.URL_link[0].link_2 != "undefined"))
 				{
 				
 				$scope.flag = false;
