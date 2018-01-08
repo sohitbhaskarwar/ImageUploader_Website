@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+	  
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+	  <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Averia+Sans+Libre|Kavivanar|Press+Start+2P|Racing+Sans+One|Ranchers|Russo+One|VT323" rel="stylesheet">
+	  <link href='https://fonts.googleapis.com/css?family=Suez One' rel='stylesheet'>
+<!-- #90a4ae #f5f5f5-->
+
+
+
+<style>
+
+body {
+    background-color: #90a4ae;
+	font-family:"Comic Sans MS", cursive, sans-serif; 
+	font-color : #ffebee;
+}
+
+select{
+	display: block;
+	width: 140px;
+	margin: 30px 0;
+	padding: 5px 5px 5px 5px;
+	background-color: #29434e;
+	color: #ffff;
+	height: 40px;
+	border-radius: 4px;
+	border: 2px solid #fff;
+}
+
+input[type="submit"]{
+	background: #666ad1;
+	font-family:"Comic Sans MS", cursive, sans-serif;
+	
+	color: #fff;
+	font-size: 17px;
+	border-radius: 5px;
+	height: 30px;
+	width: 120px;
+	
+}
+
+button{
+	background: #666ad1;
+	font-family:"Comic Sans MS", cursive, sans-serif;
+	
+	color: #fff;
+	font-size: 20px;
+	border-radius: 5px;
+	height: 40px;
+	width: 90px;
+}
+
+input[type=file]{
+
+	background: #880e4f;
+	font-family:"Comic Sans MS", cursive, sans-serif;
+	color: #fff;
+	font-size: 17px;
+	border-radius: 5px;
+	height: 26px;
+	width: 300px;
+}
+
+</style>
+
+</head>
+<body >
+	<div ng-app="myApp" ng-controller="myCtrl" height="1000px"  width="1000px" ">
+		<center><br>
+			<h1><label>Select Level:- </label></h1>
+			<select  ng-model="dropdown_level" ng-options="x for x in levels" ng-click="foo_getImg()" value="qwe">
+			</select>
+ <br>
+   
+		<div ng-show="flag">
+		<img src="{{imgURL_1}}"  height="233px"  width="200px" > 
+		<img src="{{imgURL_2}}"  height="233px"  width="200px" >
+		<br>
+		</div>
+		<br>
+
+		<div ng-show="image_upload">
+			<form method="post" action="http://localhost:9090/asd"  enctype="multipart/form-data" >
+	
+				<input  type="file" name="image" ><br>
+				<input name="image_1" value="{{level_name}}" type="hidden"><br>
+				<input  type="file" name="image" ><br>
+				<input name="image_2" value="{{level_name}}" type="hidden"><br>
+				<input  type="submit" value="submit"><br><br><br>
+				
+			</form>
+	
+		</div>
+	
+		<h3><label>Do you want to upload more images ??? Then select the level</label></h3>
+	
+		<select ng-model="all_dropdown_level" ng-options="y for y in levels" ng-click="all()" value="qwe">
+		</select>
+	 
+		<button  ng-click="show_browse()">Submit</button>
+	
+	
+	<div ng-show="upload_extra">
+	
+		<form method="post" action="http://localhost:9090/extra_post"  enctype="multipart/form-data" >
+			<br><br>
+			<input  type="file" name="image" ><br>
+			<input name="image_1" value="{{link_level}}" type="hidden"><br>
+			<input type="submit" value="submit">
+		</form>
+	
+	</div>
+	<br>
+	<br>
+	
+		<h3><label>Do you want to see all images of resp level??Then choose the level</label></h3>
+			<select ng-model="all_data" ng-options="y for y in levels" ng-click="foo_getAllimages()" value="qwe">
+			</select>
+		
+	<div ng-show="allImage">
+	
+	<!-- <img src="{{img1}}"  height="300px"  width="200px" > -->
+
+	
+		<table>
+			<tr ng-repeat="i in temp ">
+			<td> <img src="{{i}}"  height="300px"  width="200px"  ng-hide="(i=='level_1') || (i=='level_2') || (i=='level_3') || (i=='level_4') || (i==null) || (i=='')" > </td>	
+			</tr>
+		</table>
+
+	</div>
+ 
+   </center>
+</div>
+
+
+
+	<script src="file_upload.js">  </script>
+                           
+</body>
+</html>
