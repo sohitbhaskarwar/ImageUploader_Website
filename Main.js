@@ -38,7 +38,7 @@ var upload = multer({ storage:storage });
 var con = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "system",
+  password: "sohit1234",
   database: "website_test"
 });
 

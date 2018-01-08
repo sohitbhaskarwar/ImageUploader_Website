@@ -87,7 +87,7 @@ input[type=file]{
 		<br>
 
 		<div ng-show="image_upload">
-			<form method="post" action="http://localhost:9090/asd"  enctype="multipart/form-data" >
+			<form method="post" action="http://ec2-34-209-125-251.us-west-2.compute.amazonaws.com:9090/asd"  enctype="multipart/form-data" >
 	
 				<input  type="file" name="image" ><br>
 				<input name="image_1" value="{{level_name}}" type="hidden"><br>
@@ -109,7 +109,7 @@ input[type=file]{
 	
 	<div ng-show="upload_extra">
 	
-		<form method="post" action="http://localhost:9090/extra_post"  enctype="multipart/form-data" >
+		<form method="post" action="http://ec2-34-209-125-251.us-west-2.compute.amazonaws.com:9090/extra_post"  enctype="multipart/form-data" >
 			<br><br>
 			<input  type="file" name="image" ><br>
 			<input name="image_1" value="{{link_level}}" type="hidden"><br>
