@@ -38,8 +38,8 @@ var upload = multer({ storage:storage });
 var con = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "sohit1234",
-  database: "asd"
+  password: "system",
+  database: "website_test"
 });
 
 app.use(express.static('public'));
