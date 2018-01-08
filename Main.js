@@ -38,7 +38,7 @@ var upload = multer({ storage:storage });
 var con = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "sohit1234",
+  password: "system",
   database: "website_test"
 });
 
@@ -173,7 +173,7 @@ function getImage(request,response){
 	
 	con.query(q3,function(err,result){
 		console.log(result);
-		if(result)
+		
 		response.send(result);
 	});	
 	
